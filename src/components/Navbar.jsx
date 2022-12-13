@@ -29,7 +29,7 @@ const Navbar = () => {
           <li className="navLink">Series</li>
         </ul>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 text-white">
         <FaSearch />
       </div>
     </header>
