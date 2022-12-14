@@ -13,18 +13,18 @@ const Row = ({title, fetchURL, rowID}) => {
   }, [fetchURL]);
 
   const slideLeft = () => {
-    var slider = document.getElementById('slider' + rowID);
+    let slider = document.getElementById('slider' + rowID);
     slider.scrollLeft = slider.scrollLeft - 500;
   };
   const slideRight = () => {
-    var slider = document.getElementById('slider' + rowID);
+    let slider = document.getElementById('slider' + rowID);
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
   return (
     <>
-      <h2 className='text-white font-bold md:text-xl p-4'>{title}</h2>
-      <div className='relative flex items-center group'>
+        <h2 className='text-white font-bold md:text-xl p-4'>{title}</h2>
+        <div className='relative flex items-center group'>
         <MdChevronLeft
           onClick={slideLeft}
           className='bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 group-hover:block'

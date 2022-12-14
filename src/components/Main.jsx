@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaStar } from "react-icons/fa";
 import requests from '../Requests';
 
 const Main = () => {
@@ -7,7 +8,7 @@ const Main = () => {
     const movie = movies[Math.floor(Math.random() * movies.length)];
 
     useEffect(() => {
-        axios.get(requests.requestHorror).then((response) => {
+        axios.get(requests.requestPopular).then((response) => {
         setMovies(response.data.results);
         });
     }, []);
@@ -19,6 +20,7 @@ const Main = () => {
           return str;
         }
     };
+    console.log(movie)
 
     return (
         <div className='w-full h-[550px] text-white'>
@@ -30,6 +32,10 @@ const Main = () => {
                     alt={movie?.title}
                 />
                 <div className='absolute w-full top-[25%] p-4 md:p-8'>
+                    <div className="flex items-center space-x-1 text-yellow-300">
+                        <FaStar/>
+                        <p className='text-sm md:text-xl'>{movie?.vote_average}</p>
+                    </div>
                     <h1 className='text-2xl md:text-4xl font-bold'>{movie?.title}</h1>
                     <div className='my-4'>
                         <button className='border bg-gray-300 text-black border-gray-300 py-2 px-5 mr-4'>
