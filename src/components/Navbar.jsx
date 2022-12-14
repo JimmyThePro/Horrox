@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`${isScrolled && 'bg-[#141414]'}`}>
+    <header className={`${isScrolled && 'bg-[#141414e6]'}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
         <NavLink to='/'> <h1 className="text-red-600 text-4xl font-bold cursor-pointer object-contain">
           HORROX
