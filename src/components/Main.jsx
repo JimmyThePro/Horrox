@@ -8,9 +8,17 @@ const Main = () => {
     const movie = movies[Math.floor(Math.random() * movies.length)];
 
     useEffect(() => {
-        axios.get(requests.requestPopular).then((response) => {
-        setMovies(response.data.results);
-        });
+        const getData = async () => {
+            try {
+                const response = await axios.get(
+                    requests.requestPopular
+                );
+                setMovies(response.data.results);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        getData();
     }, []);
 
     const lessLetters = (str, num) => {

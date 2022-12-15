@@ -13,9 +13,9 @@ const Movie = ({ item }) => {
             {item?.vote_average}
         </div>
         <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
-            <p className="white-space-normal text-white text-md md:text-xl font-bold flex justify-center items-center h-full text-center">
+            <div className="white-space-normal text-white text-md md:text-xl font-bold flex justify-center items-center h-full text-center">
             <p>More Info</p>
-            </p>
+            </div>
         </div>
     </div>
   );
