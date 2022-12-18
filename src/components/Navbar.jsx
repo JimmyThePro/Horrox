@@ -54,7 +54,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </nav>
-                <form className="flex items-center space-x-4 text-white border-2 border-gray-300 bg-gradient-to-r from-black to-red-900 h-10 px-5 rounded-lg text-sm">
+                <form className="flex items-center justify-between text-white border-2 border-gray-300 bg-gradient-to-r from-black to-transparent h-10 px-5 rounded-lg text-sm">
                     <input
                         className="focus:outline-none bg-transparent"
                         type="text"
@@ -65,7 +65,7 @@ const Navbar = () => {
                     <FaSearch className="text-white"/>
                 </form>
             </header>
-            {results.length > 0 && (
+            {results && (
                 <div>
                     {results.map((movie, id) => (
                         <div

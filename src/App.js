@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import Series from "./pages/Series";
+import Footer from "./components/Footer";
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
                 <Route path="/movies" element={<Movies />} />
                 <Route path="/series" element={<Series />} />
             </Routes>
+            <Footer />
         </>
     );
 };
