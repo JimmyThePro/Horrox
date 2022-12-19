@@ -5,24 +5,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 @layer base {
-    body {
-        @apply bg-[url('./assets/images/bg.png')] bg-slate-900 bg-no-repeat bg-left-top;
-        font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
     header {
-        @apply fixed top-0 z-50 flex-wrap sm:flex w-full items-center justify-between px-4 py-3 transition-all lg:px-10 lg:py-4;
+        @apply z-[100] fixed top-0 flex-wrap sm:flex w-full items-center justify-between px-4 py-3 transition-all lg:px-10 lg:py-4;
     }
 }
 
 @layer components {
     .navLink {
-        @apply cursor-pointer text-sm font-bold text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3];
+        @apply z-50 cursor-pointer text-sm font-light text-[#e5e5e5];
     }
 }
 
+body {
+  background:-moz-radial-gradient(circle at 50% 50%, rgba(103, 2, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background:-webkit-radial-gradient(circle at 50% 50%, rgba(103, 2, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background:-o-radial-gradient(circle at 50% 50%, rgba(103, 2, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background:-ms-radial-gradient(circle at 50% 50%, rgba(103, 2, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background:radial-gradient(circle at 50% 50%, rgba(103, 2, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .flicker-3 {
-	-webkit-animation: flicker-3 7s linear infinite both;
-	        animation: flicker-3 7s linear infinite both;
+	-webkit-animation: flicker-3 5s linear infinite both;
+	        animation: flicker-3 5s linear infinite both;
+}
+
+.vibrate-1 {
+	-webkit-animation: vibrate-1 2s linear infinite both;
+	        animation: vibrate-1 2s linear infinite both;
+}
+
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 }
 
 @-webkit-keyframes flicker-3 {

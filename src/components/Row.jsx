@@ -30,7 +30,7 @@ const Row = ({ title, fetchURL, rowID }) => {
     return (
         <>
             <div className="w-full md:w-10/12 p-2 mx-auto justify-center">
-                <h2 className="text-white font-bold md:text-xl p-3 bg-gradient-to-r from-red-900 to-transparent rounded">{title}</h2>
+                <h2 className="text-white font-bold md:text-xl p-3 mb-2 mt-2 bg-gradient-to-r from-red-900 to-transparent rounded">{title}</h2>
                 <div className="relative flex items-center group p-3">
                     <MdChevronLeft
                         onClick={slideLeft}
