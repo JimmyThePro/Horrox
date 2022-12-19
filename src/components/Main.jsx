@@ -30,7 +30,7 @@ const Main = () => {
 
     return (
         <div className="w-full h-[550px] text-white mb-5">
-            <div className="w-full h-full relative border-b-2 border-white">
+            <div className="w-full h-full relative border-y-[1px] border-white">
                 <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
                 <img
                     className="w-full h-full object-cover"

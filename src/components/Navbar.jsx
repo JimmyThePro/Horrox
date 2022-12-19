@@ -48,8 +48,8 @@ const Navbar = () => {
                             HORROX
                         </h1>
                     </NavLink>
-                    <div className="hidden space-x-4 md:flex text-white font-light italic">
-                        <q>
+                    <div className="flex space-x-4 text-white font-light italic">
+                        <q className="hidden md:flex">
                             The Best Horror Movie Site!
                         </q>
                         <FaGhost className="mt-1 vibrate-1"/>
@@ -77,19 +77,19 @@ const Navbar = () => {
                     >
                         <div>
                             <img
-                                className="w-full h-auto block"
+                                className="w-full h-auto block shadow-md rounded-lg"
                                 src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
                                 alt={movie?.title}
                             />
                             <div
                                 className="w-full flex items-center justify-center space-x-1 text-yellow-300 text-sm md:text-base
-                                bg-[#290606af] absolute bottom-0"
+                                bg-[#290606af] absolute bottom-0 rounded-b-lg"
                             >
                                 <FaStar className="mr-1" />
                                 <p>{movie?.vote_average}</p>
                             </div>
                         </div>
-                        <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
+                        <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white rounded-lg">
                             <div className="text-white text-sm md:text-lg font-bold flex whitespace-pre-wrap justify-center items-center h-full text-center">
                                 <p>{movie?.title}</p>
                             </div>
