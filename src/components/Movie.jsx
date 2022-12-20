@@ -16,7 +16,7 @@ const Movie = ({ item }) => {
         });
 
         if (!sameMovie) {
-            viewedMovies.push(item);
+            viewedMovies.unshift(item);
             localStorage.setItem(
                 "recentlyViewedMovies",
                 JSON.stringify(viewedMovies)
