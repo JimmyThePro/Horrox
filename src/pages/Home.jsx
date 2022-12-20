@@ -1,5 +1,6 @@
 import Main from '../components/Main';
 import Row from '../components/Row';
+import ViewedMovies from '../components/ViewedMovies';
 import requests from '../Requests';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
             <Main />
             <Row rowID='1' title='Top Rated' fetchURL={requests.requestTopRated} />
             <Row rowID='2' title='Popular' fetchURL={requests.requestPopular} />
+            <ViewedMovies title='Recently Viewed' />
         </>
     )
 };

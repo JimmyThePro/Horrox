@@ -1,13 +1,13 @@
 import { FaSearch, FaStar, FaGhost } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { key } from "../Requests.js";
 import axios from "axios";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [searchMovie, setSearchMovie] = useState("");
     const [results, setResults] = useState([]);
-    const key = "03526a361dbbb2a0c7d336b8ce32f132";
 
     useEffect(() => {
         const searchMovies = async () => {
@@ -63,7 +63,7 @@ const Navbar = () => {
                         value={searchMovie}
                         onChange={(event) => setSearchMovie(event.target.value)}
                     />
-                    <FaSearch className="text-white" />
+                    <FaSearch className="text-gray-300" />
                 </div>
             </header>
             <div>
@@ -89,7 +89,7 @@ const Navbar = () => {
                                 <p>{movie?.vote_average}</p>
                             </div>
                         </div>
-                        <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white rounded-lg">
+                        <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 transition duration-300 opacity-0 hover:opacity-100 text-white rounded-lg">
                             <div className="text-white text-sm md:text-lg font-bold flex whitespace-pre-wrap justify-center items-center h-full text-center">
                                 <p>{movie?.title}</p>
                             </div>
