@@ -46,7 +46,6 @@ const Main = () => {
             return str;
         }
     };
-    console.log(movie);
 
     return (
         <>

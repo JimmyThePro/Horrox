@@ -1,8 +1,8 @@
 import { FaSearch, FaStar, FaGhost } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { key } from "../Requests.js";
 import axios from "axios";
+import { key } from "../Requests.js";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -70,9 +70,25 @@ const Navbar = () => {
                 {results.map((movie, id) => (
                     <a
                         key={id}
+                        onClick={() => {
+                            let sameMovie = false;
+                            const storedMovies = JSON.parse(localStorage.getItem('recentlyViewedMovies')) || [];
+                            storedMovies.forEach((element) => {
+                                if (element.id === movie.id) {
+                                    sameMovie = true;
+                                }
+                            });
+                            if (!sameMovie) {
+                                storedMovies.unshift(movie);
+                                localStorage.setItem(
+                                    "recentlyViewedMovies",
+                                    JSON.stringify(storedMovies)
+                                );
+                            }
+                        }}
                         href={`https://www.themoviedb.org/movie/${movie?.id}`}
                         target='_blank'
-                        rel="noreferrer"
+                        rel='noreferrer'
                         className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative m-2 z-40"
                     >
                         <div>

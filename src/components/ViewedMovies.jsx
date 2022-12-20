@@ -7,9 +7,9 @@ const ViewedMovies = ({ title }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const pushedMovies =
+            const storedMovies =
                 JSON.parse(localStorage.getItem("recentlyViewedMovies")) || [];
-            setRecentlyViewedMovies(pushedMovies);
+            setRecentlyViewedMovies(storedMovies);
         }, 1200);
         return () => clearInterval(interval);
     }, []);
@@ -39,12 +39,12 @@ const ViewedMovies = ({ title }) => {
                         id={"slider"}
                         className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
                     >
-                        {recentlyViewedMovies.map((item) => (
+                        {recentlyViewedMovies.map((item, id) => (
                             <a
                                 href={`https://www.themoviedb.org/movie/${item?.id}`}
                                 target="_blank"
                                 rel="noreferrer"
-                                key={item?.id}
+                                key={id}
                                 className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative m-2"
                             >
                                 <div>
@@ -68,11 +68,11 @@ const ViewedMovies = ({ title }) => {
                                 </div>
                             </a>
                         ))}
-                        {recentlyViewedMovies.length <= 0 &&
+                        {recentlyViewedMovies.length <= 0 && (
                             <p className="text-center text-white whitespace-pre-wrap italic">
                                 You have no viewed movies yet...
                             </p>
-                        }
+                        )}
                     </div>
                     <MdChevronRight
                         onClick={slideRight}
